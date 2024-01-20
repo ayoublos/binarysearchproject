@@ -1,4 +1,5 @@
 Introduction:
+
 Binary Search is defined as a searching algorithm used in a sorted array by repeatedly dividing the search interval in half in order to narrow down the possible locations of a target value
 
 Algorithm description:
@@ -12,7 +13,7 @@ Recursive Binary Search Algorithm.
 
 I. Iterative  Binary Search Algorithm:
 
-1. Initialization:
+1. Initialization: 
 
     * Set the left pointer (low) to the beginning of the array (usually 0).
     * Set the right pointer (high) to the end of the array (length - 1).
@@ -33,6 +34,7 @@ I. Iterative  Binary Search Algorithm:
     3.Midpoint Calculation:
 
     Calculate the midpoint (mid) of the current search range using the formula: mid =low + (high - low) / 2. This identifies the index in the middle of the current search range.
+
 
     ```js
     let mid = l + Math.floor((r - l) / 2);
