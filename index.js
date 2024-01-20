@@ -1,13 +1,13 @@
 function binarySearch(arr, x)
 { arr.sort()
 //initializing of l and r which are going to be the ends of the search interval
-	let l = 0;
-	let r = arr.length - 1;
+	let low = 0;
+	let high = arr.length - 1;
 //declaring mid which is going to be the middle index of the search interval
 	let mid;
 // creating a while loop that will run as long as the search interval has at least one element 
-	while (r >= l) {
-		mid = l + Math.floor((r - l) / 2);
+	while (high>= low) {
+		mid = low + Math.floor((high - low) / 2);
 
 //If the element is present at the middle index we are going to return the middle index
 		
@@ -16,11 +16,11 @@ function binarySearch(arr, x)
 
 	// If element is smaller than mid, then it can only be present in left sub-array
 		if (arr[mid] > x)
-			r = mid - 1;
+			high = mid - 1;
 			
 		// Else the element can only be present in the right sub-array
 		else
-			l = mid + 1;
+			low = mid + 1;
 	}
    
 	// We reach here when element is not present in array

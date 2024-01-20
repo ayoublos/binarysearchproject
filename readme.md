@@ -15,8 +15,8 @@ I. Iterative  Binary Search Algorithm:
 
 1. Initialization: 
 
-    * Set the left pointer (low) to the beginning of the array (usually 0).
-    * Set the right pointer (high) to the end of the array (length - 1).
+    * Set the left pointer (`low`) to the beginning of the array (usually 0).
+    * Set the right pointer (`high`) to the end of the array (length - 1).
 
     ```js
     let low = 0;
@@ -28,7 +28,7 @@ I. Iterative  Binary Search Algorithm:
     Use a while loop that continues as long as the right pointer is greater than or equal to the left pointer.
 
     ```js
-    while (low>= high) 
+    while (high>= low) 
     ```
         
     3.Midpoint Calculation:
@@ -37,7 +37,7 @@ I. Iterative  Binary Search Algorithm:
 
 
     ```js
-    let mid = l + Math.floor((r - l) / 2);
+    let mid = low + Math.floor((high - low) / 2);
 
     ```
 
@@ -46,19 +46,20 @@ I. Iterative  Binary Search Algorithm:
 
     Compare the value at the midpoint with the target value.
     If they are equal, the target has been found, and the index is returned.
-    If the value at the midpoint is less than the target, update the left pointer to mid + 1 to search in the right half.
     If the value at the midpoint is greater than the target, update the right pointer to mid - 1 to search in the left half.
+    If the value at the midpoint is less than the target, update the left pointer to mid + 1 to search in the right half.
+    
     ```js
         {if (arr[mid] == x)
 			return mid; //target found
 
 	// If element is smaller than mid, then it can only be present in left sub-array
 		if (arr[mid] > x)
-			r = mid - 1;
+			high = mid - 1;
 			
 		// Else the element can only be present in the right sub-array
 		else
-			l = mid + 1;
+			low = mid + 1;
 	}
    
 	// We reach here when element is not present in array
@@ -78,13 +79,13 @@ I. Iterative  Binary Search Algorithm:
     function binarySearch(arr, x)
     { 
         //initializing of l and r which are going to be the ends of the search interval
-	    let l = 0;
-	    let r = arr.length - 1;
+	    let low= 0;
+	    let high = arr.length - 1;
         //declaring mid which is going to be the middle index of the search interval
 	    let mid;
         // creating a while loop that will run as long as the search interval has at least one element 
-	    while (r >= l) {
-		mid = l + Math.floor((r - l) / 2);
+	    while (high >= low) {
+		mid = low + Math.floor((high - low) / 2);
 
         //If the element is present at the middle index we are going to return the middle index
 		
@@ -93,11 +94,11 @@ I. Iterative  Binary Search Algorithm:
 
 	    // If element is smaller than mid, then it can only be present in left sub-array
 		if (arr[mid] > x)
-			r = mid - 1;
+			high = mid - 1;
 			
 		// Else the element can only be present in the right sub-array
 		else
-			l = mid + 1;
+			low = mid + 1;
 	    }
    
 	    // We reach here when element is not present in array
@@ -138,14 +139,14 @@ II. Recursive Binary Search Algorithm:
 
 2. Midpoint Calculation:
 
-    Calculate the midpoint (mid) of the current search range using the formula: mid = l + (r - l) / 2.
+    Calculate the midpoint (mid) of the current search range using the formula: mid = low + (high- low) / 2.
 
 3. Target Comparison:
 
     Compare the value at the midpoint with the target value.
     If they are equal, return the index of the midpoint.
-    If the value at the midpoint is less than the target, make a recursive call with the updated l pointer (l = mid + 1) to search in the right half.
-    If the value at the midpoint is greater than the target, make a recursive call with the updated r pointer (r = mid - 1) to search in the left half.
+    If the value at the midpoint is less than the target, make a recursive call with the updated low pointer (low = mid + 1) to search in the right half.
+    If the value at the midpoint is greater than the target, make a recursive call with the updated high pointer (high = mid - 1) to search in the left half.
 
 4. Recursive Calls:
 
@@ -157,9 +158,9 @@ II. Recursive Binary Search Algorithm:
         // A recursive binary search function. It returns
         // location of x in given array arr[l..r] is present,
         // otherwise -1
-        function binarySearch(arr, l, r, x){
-            if (r >= l) {
-                let mid = l + Math.floor((r - l) / 2);
+        function binarySearch(arr, low, high, x){
+            if (high >= low) {
+                let mid = low + Math.floor((high - low) / 2);
 
                 // If the element is present at the middle
                 // itself
@@ -169,11 +170,11 @@ II. Recursive Binary Search Algorithm:
                 // If element is smaller than mid, then
                 // it can only be present in left sub-array
                 if (arr[mid] > x)
-                    return binarySearch(arr, l, mid - 1, x);
+                    return binarySearch(arr, low, mid - 1, x);
 
                 // Else the element can only be present
                 // in right sub-array
-                return binarySearch(arr, mid + 1, r, x);
+                return binarySearch(arr, mid + 1, high, x);
             }
 
             // We reach here when element is not
