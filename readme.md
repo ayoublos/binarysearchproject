@@ -73,7 +73,26 @@ function binarySearch(arr, x)
     (result == -1) ? console.log("Element is not present in array")
 			: console.log ("Element is present at index " + result);
 
+II. Recursive Binary Search Algorithm:
 
+    1. Base Case:
+
+        If the left pointer is greater than the right pointer, return -1 to indicate that the target is not found in the current search range.
+
+    2. Midpoint Calculation:
+
+        Calculate the midpoint (mid) of the current search range using the formula: mid = l + (r - l) / 2.
+
+    3. Target Comparison:
+
+        Compare the value at the midpoint with the target value.
+        If they are equal, return the index of the midpoint.
+        If the value at the midpoint is less than the target, make a recursive call with the updated l pointer (l = mid + 1) to search in the right half.
+        If the value at the midpoint is greater than the target, make a recursive call with the updated r pointer (r = mid - 1) to search in the left half.
+
+    4. Recursive Calls:
+
+        The recursive calls continue until the base case is reached, and the function returns either the index of the target or -1 if the target is not found.
 
 				
 // JavaScript program to implement recursive Binary Search
@@ -114,17 +133,23 @@ let result = binarySearch(arr, 0, n - 1, x);
 
 
 Complexity Analysis of Binary Search:
+
     Time Complexity: 
         Best Case: O(1)
         Average Case: O(log N)
         Worst Case: O(log N)
+
     Space complexity: 
     O(1), If the recursive call stack is considered then the auxiliary space will be O(logN).
+
 Advantages of Binary Search:
+
    * Binary search is faster than linear search, especially for large arrays.
    * More efficient than other searching algorithms with a similar time complexity,   such as interpolation search or exponential search.
    * Binary search is well-suited for searching large datasets that are stored in external memory, such as on a hard drive or in the cloud.
+
 Drawbacks of Binary Search:
+
    * The array should be sorted.
    * Binary search requires that the data structure being searched be stored in contiguous memory locations. 
    * Binary search requires that the elements of the array be comparable, meaning that they must be able to be ordered.
