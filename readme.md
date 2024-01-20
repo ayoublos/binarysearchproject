@@ -164,8 +164,8 @@ II. Recursive Binary Search Algorithm:
 
                 // If the element is present at the middle
                 // itself
-                if (arr[mid] == x)
-                    return mid;
+                if (arr[mid] == x){
+                    return mid;}
 
                 // If element is smaller than mid, then
                 // it can only be present in left sub-array
