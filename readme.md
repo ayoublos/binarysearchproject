@@ -54,12 +54,12 @@ I. Iterative  Binary Search Algorithm:
 			return mid; //target found
 
 	// If element is smaller than mid, then it can only be present in left sub-array
-		if (arr[mid] > x)
-			r = mid - 1;
+		else if (arr[mid] > x){
+			r = mid - 1;}
 			
 		// Else the element can only be present in the right sub-array
-		else
-			l = mid + 1;
+		else{
+			l = mid + 1;}
 	}
    
 	// We reach here when element is not present in array
