@@ -14,6 +14,7 @@ I. Iterative  Binary Search Algorithm:
 
         * Set the left pointer (l) to the beginning of the array (usually 0).
         * Set the right pointer (r) to the end of the array (length - 1).
+    
 
     2.Iterative Loop:
 
@@ -27,8 +28,8 @@ I. Iterative  Binary Search Algorithm:
 
         Compare the value at the midpoint with the target value.
         If they are equal, the target has been found, and the index is returned.
-        If the value at the midpoint is less than the target, update the low pointer to mid + 1 to search in the right half.
-        If the value at the midpoint is greater than the target, update the high pointer to mid - 1 to search in the left half.
+        If the value at the midpoint is less than the target, update the left pointer to mid + 1 to search in the right half.
+        If the value at the midpoint is greater than the target, update the right pointer to mid - 1 to search in the left half.
 
     5.Repeat the Process:
 
@@ -38,10 +39,6 @@ I. Iterative  Binary Search Algorithm:
 
         If the loop exits and the left pointer is greater than the right pointer, the target is not present in the array, and the algorithm returns -1.
  
-
-
-
-
 
 function binarySearch(arr, x)
 { 
@@ -116,7 +113,21 @@ let result = binarySearch(arr, 0, n - 1, x);
 			: console.log("Element is present at index " +result);
 
 
-
+Complexity Analysis of Binary Search:
+    Time Complexity: 
+        Best Case: O(1)
+        Average Case: O(log N)
+        Worst Case: O(log N)
+    Space complexity: 
+    O(1), If the recursive call stack is considered then the auxiliary space will be O(logN).
+Advantages of Binary Search:
+   * Binary search is faster than linear search, especially for large arrays.
+   * More efficient than other searching algorithms with a similar time complexity,   such as interpolation search or exponential search.
+   * Binary search is well-suited for searching large datasets that are stored in external memory, such as on a hard drive or in the cloud.
+Drawbacks of Binary Search:
+   * The array should be sorted.
+   * Binary search requires that the data structure being searched be stored in contiguous memory locations. 
+   * Binary search requires that the elements of the array be comparable, meaning that they must be able to be ordered.
 
 
 
