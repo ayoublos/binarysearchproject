@@ -41,6 +41,7 @@ I. Iterative  Binary Search Algorithm:
 
     4.Target Comparison:
 
+
     Compare the value at the midpoint with the target value.
     If they are equal, the target has been found, and the index is returned.
     If the value at the midpoint is less than the target, update the left pointer to mid + 1 to search in the right half.
