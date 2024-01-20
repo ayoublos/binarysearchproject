@@ -14,15 +14,25 @@ I. Iterative  Binary Search Algorithm:
 
         * Set the left pointer (l) to the beginning of the array (usually 0).
         * Set the right pointer (r) to the end of the array (length - 1).
-    
+    ```js
+    let l = 0;
+	let r = arr.length - 1;
+    ```
 
     2.Iterative Loop:
 
         Use a while loop that continues as long as the right pointer is greater than or equal to the left pointer.
+
+    ```js
+    while (r >= l) 
+    ```
         
     3.Midpoint Calculation:
 
         Calculate the midpoint (mid) of the current search range using the formula: mid = l + (r - l) / 2. This identifies the index in the middle of the current search range.
+    ```js
+    let mid = l + Math.floor((r - l) / 2);
+    ```
 
     4.Target Comparison:
 
@@ -30,6 +40,22 @@ I. Iterative  Binary Search Algorithm:
         If they are equal, the target has been found, and the index is returned.
         If the value at the midpoint is less than the target, update the left pointer to mid + 1 to search in the right half.
         If the value at the midpoint is greater than the target, update the right pointer to mid - 1 to search in the left half.
+    ```js
+        {if (arr[mid] == x)
+			return mid; //target found
+
+	// If element is smaller than mid, then it can only be present in left sub-array
+		if (arr[mid] > x)
+			r = mid - 1;
+			
+		// Else the element can only be present in the right sub-array
+		else
+			l = mid + 1;
+	}
+   
+	// We reach here when element is not present in array
+	return -1;
+    ```
 
     5.Repeat the Process:
 
