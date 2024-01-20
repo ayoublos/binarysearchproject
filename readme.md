@@ -198,14 +198,19 @@ O(1), If the recursive call stack is considered then the auxiliary space will be
 Advantages of Binary Search:
 
    * Binary search is faster than linear search, especially for large arrays.
-   * More efficient than other searching algorithms with a similar time complexity,   such as interpolation search or exponential search.
+   * More efficient than other searching algorithms with a similar time complexity
    * Binary search is well-suited for searching large datasets that are stored in external memory, such as on a hard drive or in the cloud.
 
 Drawbacks of Binary Search:
 
    * The array should be sorted.
-   * Binary search requires that the data structure being searched be stored in contiguous memory locations. 
    * Binary search requires that the elements of the array be comparable, meaning that they must be able to be ordered.
+
+Citation:
+
+https://www.geeksforgeeks.org/binary-search/
+
+https://chat.openai.com/share/ab634118-f6e7-4df9-8ab3-f4d9b5c29f94
 
 
 

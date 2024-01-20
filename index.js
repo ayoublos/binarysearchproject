@@ -27,7 +27,7 @@ function binarySearch(arr, x)
 	return -1;
 }
 console.log(binarySearch([5, 4, 3, 2, 1],2)); // an array of descending order elements
-console.log(binarySearch([8, 23, 9, 4, 12, -8, 4, 67, 342, -1000],23)); // An array of unsorted positive and negative elements
+console.log(binarySearch([8, 23, 9,12, -8, 4, 67, 342, -1000],23)); // An array of unsorted positive and negative elements
 
 
 console.log(binarySearch([],3)); // an empty array
