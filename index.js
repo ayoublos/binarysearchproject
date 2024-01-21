@@ -28,8 +28,8 @@ function binarySearch(arr, x)
 	// We reach here when element is not present in array
 	return -1;
 }
-console.log(binarySearch([1,3,5,7,9,11,13,15,17,19],3)); // an array of descending order elements
-console.log(binarySearch([2,4,7,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,366],12)); // An array of unsorted positive and negative elements
+console.log(binarySearch([1,3,5,7,9,11,13,15,17,19],3)); // an array of ascending order elements
+console.log(binarySearch([2,4,5,18,21,32,24,27,30,33,36,39,42,45,48,51,54,57,366],12)); // An array of unsorted positive and negative elements
 
 
 console.log(binarySearch([],3)); // an empty array
